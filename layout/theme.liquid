@@ -8,10 +8,16 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
-  {{ 'application.css' | asset_url | stylesheet_tag }}
-  {{ 'application.js' | asset_url | script_tag }}
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+   <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&amp;display=swap" rel="stylesheet">
+  {% comment %}{{ 'application.js' | asset_url | script_tag }} {% endcomment %}
 </head>
 <body>
+  {% section "header" %}
+
 
   {% for link in linklists.main-menu.links %}
     {% assign child_list_handle = link.title | handleize %}
@@ -40,5 +46,8 @@
   <main role="main">
     {{ content_for_layout }}
   </main>
+
+
+  {{ 'theme.js' | asset_url | script_tag }}
 </body>
 </html>
