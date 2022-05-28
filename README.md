@@ -1,3 +1,1 @@
-# Electronics-Theme
-# Electronics-Theme
-# Electronics-Theme
+# Shopify Electronics Theme Development. 
